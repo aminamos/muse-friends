@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developers.cloudflare.com/workers/wrangler/configuration-schema.json",
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./public"
+  },
+  "compatibility_date": "2026-09-16",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_id": "cd33df51-88fc-4bc8-ba61-f43db1face99",
+      "database_name": "muse-friends-db",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "main": "src/index.ts",
+  "name": "muse-friends-relay",
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "RELAY_NAME": "muse-friends"
+  },
+  "workers_dev": true,
+  "routes": [
+    {
+      "pattern": "friends.minntelligence.fyi",
+      "custom_domain": true
+    }
+  ]
+}
